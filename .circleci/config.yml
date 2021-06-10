@@ -6,7 +6,7 @@ orbs:
 jobs:
   build-and-push:
     environment:
-      DOCKER_IMAGE: datnguyen25082000/ntd
+      DOCKER_IMAGE: myinitproject:last
       DOCKER_TAG: latest
     executor: docker/docker
     steps:
