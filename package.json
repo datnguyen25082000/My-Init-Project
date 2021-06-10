@@ -6,6 +6,8 @@
   "scripts": {
     "start": "webpack serve --open --mode development",
     "build": "webpack --mode production",
+    "test": "jest --watch",
+    "watch": "webpack-dev-server --progress --colors --hot --inline",
     "buildOnWin": "set \"GENERATE_SOURCEMAP=false\" && webpack --mode production",
     "buildOnLinux": "GENERATE_SOURCEMAP=false webpack --mode production"
   },
@@ -34,6 +36,7 @@
     "eslint-config-prettier": "^8.1.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.1",
+    "jest": "^27.0.4",
     "mini-css-extract-plugin": "^1.4.0",
     "prettier": "^2.2.1",
     "sass": "^1.32.8",
@@ -49,13 +52,20 @@
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "@reduxjs/toolkit": "^1.6.0",
+    "@testing-library/jest-dom": "^5.13.0",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^13.1.9",
     "axios": "^0.21.1",
-    "crypto-js": "^4.0.0",
-    "formik": "^2.2.6",
     "moment": "^2.29.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.3",
     "react-router-dom": "^5.2.0"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+    }
   }
 }

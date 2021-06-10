@@ -41,9 +41,6 @@ const config: webpack.Configuration = {
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
-    fallback: {
-      crypto: require.resolve('crypto-js'),
-    },
   },
   devServer: {
     contentBase: path.join(__dirname, 'build'),
